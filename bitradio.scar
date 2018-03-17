@@ -1,0 +1,83 @@
+program New;
+var
+i, j, col, loop, xwin: Integer;
+begin
+i := 0;
+j := 0;  
+loop := 1;       
+
+sleep(1000);
+ClickMouse(753, 8, mbLeft);                
+
+repeat
+
+// Activate Captcha
+col := GetColor(402, 319)
+
+if col=7829367 then
+begin
+    ClickMouse(400, 305, mbLeft)    
+    ClickMouse(398, 306, mbLeft)
+    WriteLn('Enabled Captcha');
+    sleep(1000);         
+end;        
+
+col := GetColor(396, 326)
+
+if col=7829367 then
+begin
+    ClickMouse(398, 306, mbLeft)    
+    WriteLn('Enabled Captcha');
+    sleep(1000);         
+end;   
+
+col := GetColor(392, 307)
+
+if col=6558167 then
+begin
+    ClickMouse(398, 306, mbLeft)    
+    WriteLn('Enabled Captcha');
+    sleep(1000);         
+end;   
+            
+sleep(500);
+//if FindColor(X,Y, 10770688, 90, 150, 420, 390) then
+
+col := GetColor(148, 250)
+
+if col=10770688 then  
+begin
+    ClickMouse(653, 370, mbLeft)  
+    WriteLn('Accept Captcha');
+    sleep(1000);
+end;       
+
+col := GetColor(137, 277)
+
+if col=10770688 then  
+begin
+    ClickMouse(653, 400, mbLeft)  
+    WriteLn('Accept Captcha');
+    sleep(1000);
+end; 
+
+sleep(500);                
+ClickMouse(755, 9, mbLeft) 
+sleep(2000);  
+
+xwin:=78+(j*85)          //85 - 8 110 - 6
+
+ClickMouse(xwin, 580, mbLeft);
+
+
+if i=7 then
+begin
+j:=-1;             
+end;
+
+j:=j+1;
+i:=j;    
+              
+sleep(2000);    
+until(loop=0);
+end.
